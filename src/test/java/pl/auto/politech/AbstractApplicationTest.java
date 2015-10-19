@@ -10,16 +10,14 @@ public abstract class AbstractApplicationTest {
 
     @BeforeClass
     public static void setUpBeforeClass() {
-
+        System.out.println("Before class here...");
     }
 
     @Before
     public abstract void setup();
 
-
-
     @After
     public void tearDown() {
-
+        System.out.println("After here...");
     }
 }
