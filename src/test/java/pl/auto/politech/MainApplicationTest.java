@@ -8,6 +8,7 @@ import static org.junit.Assert.assertTrue;
 public class MainApplicationTest extends AbstractApplicationTest {
     @Override
     public void setup() {
+        System.out.println("Before from MainApplicationTest here...");
         application = new Application();
 
     }
