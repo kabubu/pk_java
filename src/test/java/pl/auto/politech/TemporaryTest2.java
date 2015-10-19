@@ -17,4 +17,9 @@ public class TemporaryTest2 extends AbstractApplicationTest {
     public void testMainMethod() throws Exception {
         assertTrue(true);
     }
+	
+	@Test
+    public void testMainMethod2() throws Exception {
+        assertTrue(true);
+    }
 }
