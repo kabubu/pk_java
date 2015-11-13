@@ -4,17 +4,62 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>pkGroup</groupId>
-    <artifactId>autoService</artifactId>
+    <groupId>pkTeam</groupId>
+    <artifactId>pkJava</artifactId>
+    <packaging>pom</packaging>
     <version>1.0</version>
+
+
+    <properties>
+        <!-- Github web page address -->
+        <webpage>https://github.com/kabubu/pk_java</webpage>
+        <!-- default encoding used in the project -->
+        <default.encoding>UTF-8</default.encoding>
+        <!-- java compliance level -->
+        <java.compliance.level>1.8</java.compliance.level>
+        <!-- current release full name -->
+        <full.release.name>PK_Rental ${project.version}</full.release.name>
+    </properties>
+
+    <modules>
+        <module>rental</module>
+        <module>manufactory</module>
+        <module>tools</module>
+    </modules>
+
+    <organization>
+        <name>PKTeam</name>
+        <url>${webpage}</url>
+    </organization>
+
+    <url>${webpage}</url>
+    <name>Main PKTeam POM (${full.release.name})</name>
+    <inceptionYear>2015</inceptionYear>
+    <description>
+        Simple commpand line application for manage auto rental service.
+    </description>
+
     <dependencies>
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
-            <version>4.12</version>
+            <version>4.11</version>
             <scope>test</scope>
         </dependency>
     </dependencies>
 
+    <developers>
+        <developer>
+            <id>1</id>
+            <name>Krzysztof K</name>
+            <email>kabubu@o2.pl</email>
+            <organization>PKTeam</organization>
+            <organizationUrl>${webpage}</organizationUrl>
+            <roles>
+                <role>PK Team developer</role>
+            </roles>
+            <timezone>1</timezone>
+        </developer>
+    </developers>
 
 </project>
