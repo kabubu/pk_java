@@ -10,7 +10,7 @@ public class VanCar extends Vehicles {
 		super(typNadowzia, pojemnoscSilnika, cena, pojemnoscBagaznika, dostepnyDlaKlientowEkskluzywnych);
 		this.szerokoscPaki=szerokoscPaki;
 		this.glebokoscPaki=glebokoscPaki;
-		this.wysokoscPaki=glebokoscPaki;
+		this.wysokoscPaki=wysokoscPaki;
 	}
 
 }
