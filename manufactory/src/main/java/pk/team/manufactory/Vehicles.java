@@ -17,18 +17,32 @@ public abstract class Vehicles {
 	private static int nextId;
 	private int id;
 	private boolean dostepnoscNaStanie;
-	private String typNadwozia;
 	private int pojemnoscSilnika;
 	private int cena;
 	private int pojemnoscBagaznika;
 	private boolean dostepnyDlaKlientowEkskluzywnych;
 	
-	Vehicles (String typNadowzia, int pojemnoscSilnika, int cena, int pojemnoscBagaznika, 
+	public enum typNadwozia
+	{
+		Hatchback("Hatchback");//, Sedan, Kombi, VAN, Dostawczy;
+	private String nadwozie;
+	private typNadwozia(String s)
+	{
+		nadwozie=s;
+	}
+	
+	public String toString()
+	{
+		return nadwozie;
+	}
+	}
+	
+	Vehicles (/*String typNadowzia,*/ int pojemnoscSilnika, int cena, int pojemnoscBagaznika, 
 			boolean dostepnyDlaKlientowEkskluzywnych){
 		nextId++;
 		id=nextId;
 		dostepnoscNaStanie=true;
-		this.typNadwozia=typNadowzia;
+		//nadwozie=typNadowzia;
 		this.pojemnoscSilnika=pojemnoscSilnika;
 		this.cena=cena;
 		this.pojemnoscBagaznika=pojemnoscBagaznika;
@@ -41,9 +55,12 @@ public abstract class Vehicles {
 	}
 	
 	public String wyswietlPojazd(){
+		if(dostepnoscNaStanie){
 		return "Id: "+this.id+", dostepnosc na stanie: "+dostepnoscNaStanie+", typ nadwozia: "+typNadwozia
 				+", pojemnosc silnika: "+pojemnoscSilnika+", pojemnosc bagaznika: "+pojemnoscBagaznika
 				+", cena: "+cena+", dostepny dla klasy ekskluzywnej: "+dostepnyDlaKlientowEkskluzywnych;
+		}
+		return "nie ma takiego pojazdu";
 	}
 	
 	public String sprawdzDostepnosc(){
