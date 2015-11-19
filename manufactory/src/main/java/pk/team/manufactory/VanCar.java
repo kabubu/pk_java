@@ -6,7 +6,7 @@ public class VanCar extends Vehicles {
 	private int wysokoscPaki;
 	
 	VanCar(String typNadowzia, int pojemnoscSilnika, int cena, int pojemnoscBagaznika, 
-			int szerokoscPaki, int glebokoscPaki, int wysokoscPaki) {
+			int szerokoscPaki, int glebokoscPaki, int wysokoscPaki, boolean dostepnyDlaKlientowEkskluzywnych) {
 		super(typNadowzia, pojemnoscSilnika, cena, pojemnoscBagaznika, dostepnyDlaKlientowEkskluzywnych);
 		this.szerokoscPaki=szerokoscPaki;
 		this.glebokoscPaki=glebokoscPaki;

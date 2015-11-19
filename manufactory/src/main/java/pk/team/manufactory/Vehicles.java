@@ -14,18 +14,20 @@ package pk.team.manufactory;
 
 
 public abstract class Vehicles {
-	private static int id=0;
-	private static int liczbaSztukNaStanie;
+	private static int nextId;
+	private int id;
+	private boolean dostepnoscNaStanie;
 	private String typNadwozia;
 	private int pojemnoscSilnika;
 	private int cena;
 	private int pojemnoscBagaznika;
-	protected static boolean dostepnyDlaKlientowEkskluzywnych;
+	private boolean dostepnyDlaKlientowEkskluzywnych;
 	
 	Vehicles (String typNadowzia, int pojemnoscSilnika, int cena, int pojemnoscBagaznika, 
 			boolean dostepnyDlaKlientowEkskluzywnych){
-		id++;
-		liczbaSztukNaStanie++;
+		nextId++;
+		id=nextId;
+		dostepnoscNaStanie=true;
 		this.typNadwozia=typNadowzia;
 		this.pojemnoscSilnika=pojemnoscSilnika;
 		this.cena=cena;
@@ -35,23 +37,26 @@ public abstract class Vehicles {
 	}
 	
 	public void usunSprzedanyEgzemplarz(int id){
-		// tu by sie przydal destruktor ale w javie go chyba nie ma...
+		dostepnoscNaStanie=false;
 	}
 	
 	public String wyswietlPojazd(){
-		return "Id: "+id+", liczba sztuk na stanie: "+liczbaSztukNaStanie+", typ nadwozia: "+typNadwozia
+		return "Id: "+this.id+", dostepnosc na stanie: "+dostepnoscNaStanie+", typ nadwozia: "+typNadwozia
 				+", pojemnosc silnika: "+pojemnoscSilnika+", pojemnosc bagaznika: "+pojemnoscBagaznika
 				+", cena: "+cena+", dostepny dla klasy ekskluzywnej: "+dostepnyDlaKlientowEkskluzywnych;
 	}
 	
 	public String sprawdzDostepnosc(){
-		if(liczbaSztukNaStanie>0){
-			return "Samochod jest dostepny w liczbie "+liczbaSztukNaStanie+" sztuk.";
+		if(dostepnoscNaStanie){
+			return "Samochod jest dostepny.";
 		}
 		
 		return "Samochod niestety nie jest dostepny";
 	}
 	
+	public int getId(){
+		return id;
+	}
 	
 }
 
