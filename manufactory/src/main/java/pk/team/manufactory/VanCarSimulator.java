@@ -88,5 +88,7 @@ public class VanCarSimulator {
         // czy nie powinno byc tak ze sprawdzDostepnosc powinnismy wywolac na czyms innym, np z parametrem id? i analogicznie dla usunSprzedanyEgzemplarz?
 
 
+        //    Switched to a new branch 'temp2015_11_19'
+
     }
 }
