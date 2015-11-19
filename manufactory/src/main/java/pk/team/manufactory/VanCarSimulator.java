@@ -11,7 +11,7 @@ public class VanCarSimulator {
     						//a te zmienne prywatne bez przypisanej wartosci maja po prostu 0
 
                             // nie jestem przekonany:D - czyli jak sie dostane do id2 a jak do id0 i od czego to zalezy?
-
+    						// ODP tu mnie zagi¹³eœ, wiem ze static jest niezalezny od obiektu klasy
 
     public VanCarSimulator() {
         int x = 10;
@@ -23,6 +23,8 @@ public class VanCarSimulator {
                      // to nie ma w sumie znaczenia czy bede powiekszal id czy nie
                      // tutaj pewnie masz na mysli gettery/settery - co generalnie jest bliskie ale
                      // chodzilo bardziej o to: http://stackoverflow.com/questions/11664522/why-cant-we-use-this-keyword-in-a-static-method
+        			// ODP to juz wszystko jasne :) this odwoluje sie do obiektu klasy a zmienna static nie jest w obiekcie klasy tylko w samej klasy
+        
 
        
     }
@@ -55,6 +57,7 @@ public class VanCarSimulator {
         Vehicles van = new VanCar("zlote jajo", 51231232, 777777, 777777, 777777, 777777, 777777, true); //czy moge miec mozliwosc stworzenia takiego auta?
         // ODP nie powinno byc takiej mozliwosci, czy sa maski w javie? bo nawet nie doszedlem do takiego etapu :)
         // masek nie znam ale mozna napisac walidacje dla tych wartosci, wiec wszystko zalezy od nas co wpuscimy do srodka. Mozna napisac obsluge bledu w przypadku niepoprawnych danych
+        // ODP czyli try catch, i to jest ta walidacja? nie wiem o niej zbyt duzo...
         
         //czy String "zlote_jajo" moglbym zastapic jakas bardziej ograniczona konstrukcja, biorac pod uwage fakt, ze mamy tylko kilka rodzajow nadwozia?
         // ODP mozna stworzyc tryb wyliczeniowy enum albo ArrayList, jak myslisz ma to wiekszy sens? zrobic wtedy kilka opcji do wyboru sedan, kombi, van, hatchback
@@ -87,8 +90,6 @@ public class VanCarSimulator {
         // pytanie wiaze sie z ogolnym charakterem metod sprawdzDostepnosc i usunSprzedanyEgzemplarz - czy ma to sens ze wykonujemy te metody na konkretnych obiektach?
         // czy nie powinno byc tak ze sprawdzDostepnosc powinnismy wywolac na czyms innym, np z parametrem id? i analogicznie dla usunSprzedanyEgzemplarz?
 
-
-        //    Switched to a new branch 'temp2015_11_19'
 
     }
 }
