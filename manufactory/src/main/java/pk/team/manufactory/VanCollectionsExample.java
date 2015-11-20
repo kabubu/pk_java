@@ -14,7 +14,7 @@ public class VanCollectionsExample {
 
         //zbudujmy kilka aut:
         for (int i = 0; i < 5; i++) {
-            carCollectionService.add(new Car(i * 1000 + 111, "Auto_" + i));
+            carCollectionService.add(new Car(i, "Auto_" + i));
         }
 
 

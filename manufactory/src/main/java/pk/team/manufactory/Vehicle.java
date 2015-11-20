@@ -14,18 +14,18 @@ package pk.team.manufactory;
 
 
 enum TypNadwozia {
-    HATCHBACK, SEDAN;//, Sedan, Kombi, VAN, Dostawczy;
+    HATCHBACK, SEDAN, KOMBI, VAN, DOSTAWCZY;
 }
 
-public abstract class Vehicles {
+public abstract class Vehicle {
     private static int nextId;
-    private int id;
-    private boolean dostepnoscNaStanie;
-    private int pojemnoscSilnika;
-    private int cena;
-    private int pojemnoscBagaznika;
-    private boolean dostepnyDlaKlientowEkskluzywnych;
-    private TypNadwozia typNadwozia;
+    protected int id;
+    protected boolean dostepnoscNaStanie;
+    protected int pojemnoscSilnika;
+    protected int cena;
+    protected int pojemnoscBagaznika;
+    protected boolean dostepnyDlaKlientowEkskluzywnych;
+    protected TypNadwozia typNadwozia;
 
     public TypNadwozia getTypNadwozia() {
         return typNadwozia;
@@ -35,7 +35,7 @@ public abstract class Vehicles {
         this.typNadwozia = typNadwozia;
     }
 
-    Vehicles(TypNadwozia typNadowzia, int pojemnoscSilnika, int cena, int pojemnoscBagaznika,
+    Vehicle(TypNadwozia typNadowzia, int pojemnoscSilnika, int cena, int pojemnoscBagaznika,
              boolean dostepnyDlaKlientowEkskluzywnych) {
         nextId++;
         id = nextId;
@@ -69,9 +69,55 @@ public abstract class Vehicles {
         return "Samochod niestety nie jest dostepny";
     }
 
-    public int getId() {
-        return id;
-    }
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+	public boolean isDostepnoscNaStanie() {
+		return dostepnoscNaStanie;
+	}
+
+	public void setDostepnoscNaStanie(boolean dostepnoscNaStanie) {
+		this.dostepnoscNaStanie = dostepnoscNaStanie;
+	}
+
+	public int getPojemnoscSilnika() {
+		return pojemnoscSilnika;
+	}
+
+	public void setPojemnoscSilnika(int pojemnoscSilnika) {
+		this.pojemnoscSilnika = pojemnoscSilnika;
+	}
+
+	public int getCena() {
+		return cena;
+	}
+
+	public void setCena(int cena) {
+		this.cena = cena;
+	}
+
+	public int getPojemnoscBagaznika() {
+		return pojemnoscBagaznika;
+	}
+
+	public void setPojemnoscBagaznika(int pojemnoscBagaznika) {
+		this.pojemnoscBagaznika = pojemnoscBagaznika;
+	}
+
+	public boolean isDostepnyDlaKlientowEkskluzywnych() {
+		return dostepnyDlaKlientowEkskluzywnych;
+	}
+
+	public void setDostepnyDlaKlientowEkskluzywnych(
+			boolean dostepnyDlaKlientowEkskluzywnych) {
+		this.dostepnyDlaKlientowEkskluzywnych = dostepnyDlaKlientowEkskluzywnych;
+	}
+
 
 }
 
