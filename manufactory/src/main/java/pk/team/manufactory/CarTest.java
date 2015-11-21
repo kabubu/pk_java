@@ -10,5 +10,8 @@ public class CarTest {
 		System.out.println(truck1.wyswietlPojazd());
 		Vehicle vanCar1 = new VanCar(TypNadwozia.VAN,3000,40000,0,4,10,5,false);
 		System.out.println(vanCar1.wyswietlPojazd());
+		Vehicle vanCar2 = new VanCar(TypNadwozia.VAN,3000,40000,0,4,10,5,false);
+		System.out.println(vanCar1.wyswietlPojazd());
+		//todo: wojtku nqpi\\fjghefkjgh
 	}
 }
