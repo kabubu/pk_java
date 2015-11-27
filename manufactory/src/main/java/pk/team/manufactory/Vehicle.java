@@ -14,18 +14,18 @@ package pk.team.manufactory;
 
 
 enum TypNadwozia {
-    HATCHBACK, SEDAN, KOMBI, VAN, DOSTAWCZY;
+    HATCHBACK, SEDAN, KOMBI, VAN, DOSTAWCZY
 }
 
 public abstract class Vehicle {
     private static int nextId;
-    protected int id;
-    protected boolean dostepnoscNaStanie;
-    protected int pojemnoscSilnika;
-    protected int cena;
-    protected int pojemnoscBagaznika;
-    protected boolean dostepnyDlaKlientowEkskluzywnych;
-    protected TypNadwozia typNadwozia;
+    private int id;
+    private boolean dostepnoscNaStanie;
+    private int pojemnoscSilnika;
+    private int cena;
+    private int pojemnoscBagaznika;
+    private boolean dostepnyDlaKlientowEkskluzywnych;
+    private TypNadwozia typNadwozia;
 
     public TypNadwozia getTypNadwozia() {
         return typNadwozia;
