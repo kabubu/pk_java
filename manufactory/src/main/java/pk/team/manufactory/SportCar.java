@@ -21,13 +21,13 @@ public class SportCar extends Vehicle {
     }
 
 
-    public String wyswietlPojazd() {
+    public void wyswietlPojazd() {
         if (isDostepnoscNaStanie()) {
-            return "Id: " + getId() + ", dostepnosc na stanie: " + isDostepnoscNaStanie() + ", typ nadwozia: " + getTypNadwozia()
+            System.out.println("Id: " + getId() + ", dostepnosc na stanie: " + isDostepnoscNaStanie() + ", typ nadwozia: " + getTypNadwozia()
                     + ", pojemnosc silnika: " + getPojemnoscSilnika() + ", pojemnosc bagaznika: " + getPojemnoscBagaznika()
-                    + ", cena: " + getCena() + ", dostepny dla klasy ekskluzywnej: " + isDostepnyDlaKlientowEkskluzywnych() + ", moc silnika: " + mocSilnika;
+                    + ", cena: " + getCena() + ", dostepny dla klasy ekskluzywnej: " + isDostepnyDlaKlientowEkskluzywnych() + ", moc silnika: " + mocSilnika);
         }
-        return "nie ma takiego pojazdu";
+        System.out.println("nie ma takiego pojazdu");
     }
 
 }

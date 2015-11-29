@@ -39,9 +39,9 @@ public class VanCar extends Vehicle {
         this.wysokoscPaki = wysokoscPaki;
     }
 
-    public String wyswietlPojazd() {
+    public void wyswietlPojazd() {
         if (isDostepnoscNaStanie()) {
-            return "Id: " + getId() + ", dostepnosc na stanie: "
+            System.out.println("Id: " + getId() + ", dostepnosc na stanie: "
                     + isDostepnoscNaStanie() + ", typ nadwozia: "
                     + getTypNadwozia() + ", pojemnosc silnika: "
                     + getPojemnoscSilnika() + ", pojemnosc bagaznika: "
@@ -49,10 +49,10 @@ public class VanCar extends Vehicle {
                     + ", dostepny dla klasy ekskluzywnej: "
                     + isDostepnyDlaKlientowEkskluzywnych()
                     + ", wymiary kontenera: " + szerokoscPaki + "x"
-                    + wysokoscPaki + "x" + glebokoscPaki;
+                    + wysokoscPaki + "x" + glebokoscPaki);
         }
 
-        return "nie ma takiego pojazdu";
+        System.out.println("nie ma takiego pojazdu");
     }
 
 }

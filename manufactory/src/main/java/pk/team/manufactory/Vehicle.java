@@ -60,13 +60,13 @@ public abstract class Vehicle {
         dostepnoscNaStanie = false;
     }
 
-    public String wyswietlPojazd() {
+    public void wyswietlPojazd() {
         if (dostepnoscNaStanie) {
-            return "Id: " + this.id + ", dostepnosc na stanie: " + dostepnoscNaStanie + ", typ nadwozia: " + getTypNadwozia()
-                    + ", pojemnosc silnika: " + pojemnoscSilnika + ", pojemnosc bagaznika: " + pojemnoscBagaznika
-                    + ", cena: " + cena + ", dostepny dla klasy ekskluzywnej: " + dostepnyDlaKlientowEkskluzywnych;
+            System.out.println("Id: " + getId() + ", dostepnosc na stanie: " + isDostepnoscNaStanie() + ", typ nadwozia: " + getTypNadwozia()
+                    + ", pojemnosc silnika: " + getPojemnoscSilnika() + ", pojemnosc bagaznika: " + getPojemnoscBagaznika()
+                    + ", cena: " + getCena() + ", dostepny dla klasy ekskluzywnej: " + isDostepnyDlaKlientowEkskluzywnych());
         }
-        return "nie ma takiego pojazdu";
+        System.out.println("nie ma takiego pojazdu");
     }
 
     public String sprawdzDostepnosc() {

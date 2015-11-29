@@ -50,9 +50,9 @@ public class Truck extends Vehicle {
         this.ladownoscKg = ladownoscKg;
     }
 
-    public String wyswietlPojazd() {
+    public void wyswietlPojazd() {
         if (isDostepnoscNaStanie()) {
-            return "Id: " + getId() + ", dostepnosc na stanie: "
+            System.out.println("Id: " + getId() + ", dostepnosc na stanie: "
                     + isDostepnoscNaStanie() + ", typ nadwozia: "
                     + getTypNadwozia() + ", pojemnosc silnika: "
                     + getPojemnoscSilnika() + ", pojemnosc bagaznika: "
@@ -61,8 +61,8 @@ public class Truck extends Vehicle {
                     + isDostepnyDlaKlientowEkskluzywnych()
                     + ", wymiary kontenera: " + szerokoscKontenera + "x"
                     + wysokoscKontenera + "x" + glebokoscKontenera
-                    + ", ladownosc kontenera: " + ladownoscKg;
+                    + ", ladownosc kontenera: " + ladownoscKg);
         }
-        return "nie ma takiego pojazdu";
+        System.out.println("nie ma takiego pojazdu");
     }
 }
