@@ -61,7 +61,7 @@ public abstract class Vehicle {
     }
 
     public void wyswietlPojazd() {
-        if (dostepnoscNaStanie) {
+        if (isDostepnoscNaStanie()) {
             System.out.println("Id: " + getId() + ", dostepnosc na stanie: " + isDostepnoscNaStanie() + ", typ nadwozia: " + getTypNadwozia()
                     + ", pojemnosc silnika: " + getPojemnoscSilnika() + ", pojemnosc bagaznika: " + getPojemnoscBagaznika()
                     + ", cena: " + getCena() + ", dostepny dla klasy ekskluzywnej: " + isDostepnyDlaKlientowEkskluzywnych());
