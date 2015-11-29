@@ -55,13 +55,13 @@ public class Truck extends Vehicle {
             System.out.println("Id: " + getId() + ", dostepnosc na stanie: "
                     + isDostepnoscNaStanie() + ", typ nadwozia: "
                     + getTypNadwozia() + ", pojemnosc silnika: "
-                    + getPojemnoscSilnika() + ", pojemnosc bagaznika: "
-                    + getPojemnoscBagaznika() + ", cena: " + getCena()
-                    + ", dostepny dla klasy ekskluzywnej: "
+                    + getPojemnoscSilnika() + "ccm, pojemnosc bagaznika: "
+                    + getPojemnoscBagaznika() + "L, cena: " + getCena()
+                    + "zl, dostepny dla klasy ekskluzywnej: "
                     + isDostepnyDlaKlientowEkskluzywnych()
-                    + ", wymiary kontenera: " + szerokoscKontenera + "x"
-                    + wysokoscKontenera + "x" + glebokoscKontenera
-                    + ", ladownosc kontenera: " + ladownoscKg);
+                    + ", wymiary kontenera: " + szerokoscKontenera + "m x "
+                    + wysokoscKontenera + "m x " + glebokoscKontenera
+                    + "m, ladownosc kontenera: " + ladownoscKg+"kg");
         } else System.out.println("nie ma takiego pojazdu");
     }
 }

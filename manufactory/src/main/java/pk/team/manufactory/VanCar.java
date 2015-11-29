@@ -44,12 +44,12 @@ public class VanCar extends Vehicle {
             System.out.println("Id: " + getId() + ", dostepnosc na stanie: "
                     + isDostepnoscNaStanie() + ", typ nadwozia: "
                     + getTypNadwozia() + ", pojemnosc silnika: "
-                    + getPojemnoscSilnika() + ", pojemnosc bagaznika: "
-                    + getPojemnoscBagaznika() + ", cena: " + getCena()
-                    + ", dostepny dla klasy ekskluzywnej: "
+                    + getPojemnoscSilnika() + "cmm, pojemnosc bagaznika: "
+                    + getPojemnoscBagaznika() + "L, cena: " + getCena()
+                    + "zł, dostepny dla klasy ekskluzywnej: "
                     + isDostepnyDlaKlientowEkskluzywnych()
-                    + ", wymiary kontenera: " + szerokoscPaki + "x"
-                    + wysokoscPaki + "x" + glebokoscPaki);
+                    + ", wymiary kontenera: " + szerokoscPaki + "m x "
+                    + wysokoscPaki + "m x " + glebokoscPaki + "m");
         } else System.out.println("nie ma takiego pojazdu");
     }
 

@@ -18,6 +18,9 @@ enum TypNadwozia {
 }
 
 public abstract class Vehicle {
+
+    private static int nextId;
+    private int id = nextId++;
     private boolean dostepnoscNaStanie;
     private int pojemnoscSilnika;
     private int cena;
@@ -33,26 +36,16 @@ public abstract class Vehicle {
         this.typNadwozia = typNadwozia;
     }
 
-    private static int nextId;
-    private int id = assignId();
-
-    // naliczanie id metodą
-    private static int assignId() {
-        nextId++;
-        int r = nextId;
-        return r;
-    }
 
     Vehicle(TypNadwozia typNadowzia, int pojemnoscSilnika, int cena, int pojemnoscBagaznika,
             boolean dostepnyDlaKlientowEkskluzywnych) {
-/*        nextId++;
-        id = nextId;*/
-        dostepnoscNaStanie = true;
+        this.dostepnoscNaStanie = true;
         this.typNadwozia = typNadowzia;
         this.pojemnoscSilnika = pojemnoscSilnika;
         this.cena = cena;
         this.pojemnoscBagaznika = pojemnoscBagaznika;
         this.dostepnyDlaKlientowEkskluzywnych = dostepnyDlaKlientowEkskluzywnych;
+
 
     }
 
@@ -63,8 +56,8 @@ public abstract class Vehicle {
     public void wyswietlPojazd() {
         if (isDostepnoscNaStanie()) {
             System.out.println("Id: " + getId() + ", dostepnosc na stanie: " + isDostepnoscNaStanie() + ", typ nadwozia: " + getTypNadwozia()
-                    + ", pojemnosc silnika: " + getPojemnoscSilnika() + ", pojemnosc bagaznika: " + getPojemnoscBagaznika()
-                    + ", cena: " + getCena() + ", dostepny dla klasy ekskluzywnej: " + isDostepnyDlaKlientowEkskluzywnych());
+                    + ", pojemnosc silnika: " + getPojemnoscSilnika() + "cmm, pojemnosc bagaznika: " + getPojemnoscBagaznika()
+                    + "L, cena: " + getCena() + "zł, dostepny dla klasy ekskluzywnej: " + isDostepnyDlaKlientowEkskluzywnych());
         } else System.out.println("nie ma takiego pojazdu");
     }
 
