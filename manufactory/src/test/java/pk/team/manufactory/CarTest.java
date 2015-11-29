@@ -25,25 +25,34 @@ public class CarTest {
 
 
 
-        List<Vehicle> autaOdWojtka = new ArrayList<>();
-        autaOdWojtka.add(sportCar1);
-        autaOdWojtka.add(standardCar1);
-        autaOdWojtka.add(truck1);
-        autaOdWojtka.add(vanCar1);
-        autaOdWojtka.add(vanCar2);
+        List<Vehicle> salonDobrychSamochodow = new ArrayList<>();
+        salonDobrychSamochodow.add(sportCar1);
+        salonDobrychSamochodow.add(standardCar1);
+        salonDobrychSamochodow.add(truck1);
+        salonDobrychSamochodow.add(vanCar1);
+        salonDobrychSamochodow.add(vanCar2);
 
 
 
 
         List<Vehicle> napewnoDobreAuta = new ArrayList<>();
-        for(Vehicle oneVehicle : autaOdWojtka){
+        List<Vehicle> napewnoZleAuta = new ArrayList<>();
+        for(Vehicle oneVehicle : salonDobrychSamochodow){
             if(oneVehicle.getPojemnoscSilnika() > 400 && oneVehicle.getPojemnoscSilnika() < 10000){
                 napewnoDobreAuta.add(oneVehicle);
+            } else{
+                napewnoZleAuta.add(oneVehicle);
             }
         }
 
-        System.out.println("------------------------------------");
-        napewnoDobreAuta.forEach(Vehicle::wyswietlPojazd) ;
+        System.out.println("foreach skrocony dobre auta ------------------------------------");
+        napewnoDobreAuta.forEach(Vehicle::wyswietlPojazd);
+
+        System.out.println("foreach zle auta -----------------------------------------------");
+        napewnoZleAuta.forEach(el -> {
+            el.wyswietlPojazd();
+        });
+
 
 
 

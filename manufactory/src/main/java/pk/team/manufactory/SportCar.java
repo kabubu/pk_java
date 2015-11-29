@@ -24,8 +24,8 @@ public class SportCar extends Vehicle {
     public void wyswietlPojazd() {
         if (isDostepnoscNaStanie()) {
             System.out.println("Id: " + getId() + ", dostepnosc na stanie: " + isDostepnoscNaStanie() + ", typ nadwozia: " + getTypNadwozia()
-                    + ", pojemnosc silnika: " + getPojemnoscSilnika() + ", pojemnosc bagaznika: " + getPojemnoscBagaznika()
-                    + ", cena: " + getCena() + ", dostepny dla klasy ekskluzywnej: " + isDostepnyDlaKlientowEkskluzywnych() + ", moc silnika: " + mocSilnika);
+                    + ", pojemnosc silnika: " + getPojemnoscSilnika() + "ccm, pojemnosc bagaznika: " + getPojemnoscBagaznika()
+                    + "L, cena: " + getCena() + "zł, dostepny dla klasy ekskluzywnej: " + isDostepnyDlaKlientowEkskluzywnych() + ", moc silnika: " + mocSilnika + "KM");
         } else System.out.println("nie ma takiego pojazdu");
     }
 
