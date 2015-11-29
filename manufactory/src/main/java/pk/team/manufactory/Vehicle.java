@@ -18,8 +18,6 @@ enum TypNadwozia {
 }
 
 public abstract class Vehicle {
-    private static int nextId;
-    private int id;
     private boolean dostepnoscNaStanie;
     private int pojemnoscSilnika;
     private int cena;
@@ -35,10 +33,20 @@ public abstract class Vehicle {
         this.typNadwozia = typNadwozia;
     }
 
-    Vehicle(TypNadwozia typNadowzia, int pojemnoscSilnika, int cena, int pojemnoscBagaznika,
-             boolean dostepnyDlaKlientowEkskluzywnych) {
+    private static int nextId;
+    private int id = assignId();
+
+    // naliczanie id metodą
+    private static int assignId() {
         nextId++;
-        id = nextId;
+        int r = nextId;
+        return r;
+    }
+
+    Vehicle(TypNadwozia typNadowzia, int pojemnoscSilnika, int cena, int pojemnoscBagaznika,
+            boolean dostepnyDlaKlientowEkskluzywnych) {
+/*        nextId++;
+        id = nextId;*/
         dostepnoscNaStanie = true;
         this.typNadwozia = typNadowzia;
         this.pojemnoscSilnika = pojemnoscSilnika;
@@ -69,54 +77,54 @@ public abstract class Vehicle {
         return "Samochod niestety nie jest dostepny";
     }
 
-	public int getId() {
-		return id;
-	}
+    public int getId() {
+        return id;
+    }
 
-	public void setId(int id) {
-		this.id = id;
-	}
+    public void setId(int id) {
+        this.id = id;
+    }
 
-	public boolean isDostepnoscNaStanie() {
-		return dostepnoscNaStanie;
-	}
+    public boolean isDostepnoscNaStanie() {
+        return dostepnoscNaStanie;
+    }
 
-	public void setDostepnoscNaStanie(boolean dostepnoscNaStanie) {
-		this.dostepnoscNaStanie = dostepnoscNaStanie;
-	}
+    public void setDostepnoscNaStanie(boolean dostepnoscNaStanie) {
+        this.dostepnoscNaStanie = dostepnoscNaStanie;
+    }
 
-	public int getPojemnoscSilnika() {
-		return pojemnoscSilnika;
-	}
+    public int getPojemnoscSilnika() {
+        return pojemnoscSilnika;
+    }
 
-	public void setPojemnoscSilnika(int pojemnoscSilnika) {
-		this.pojemnoscSilnika = pojemnoscSilnika;
-	}
+    public void setPojemnoscSilnika(int pojemnoscSilnika) {
+        this.pojemnoscSilnika = pojemnoscSilnika;
+    }
 
-	public int getCena() {
-		return cena;
-	}
+    public int getCena() {
+        return cena;
+    }
 
-	public void setCena(int cena) {
-		this.cena = cena;
-	}
+    public void setCena(int cena) {
+        this.cena = cena;
+    }
 
-	public int getPojemnoscBagaznika() {
-		return pojemnoscBagaznika;
-	}
+    public int getPojemnoscBagaznika() {
+        return pojemnoscBagaznika;
+    }
 
-	public void setPojemnoscBagaznika(int pojemnoscBagaznika) {
-		this.pojemnoscBagaznika = pojemnoscBagaznika;
-	}
+    public void setPojemnoscBagaznika(int pojemnoscBagaznika) {
+        this.pojemnoscBagaznika = pojemnoscBagaznika;
+    }
 
-	public boolean isDostepnyDlaKlientowEkskluzywnych() {
-		return dostepnyDlaKlientowEkskluzywnych;
-	}
+    public boolean isDostepnyDlaKlientowEkskluzywnych() {
+        return dostepnyDlaKlientowEkskluzywnych;
+    }
 
-	public void setDostepnyDlaKlientowEkskluzywnych(
-			boolean dostepnyDlaKlientowEkskluzywnych) {
-		this.dostepnyDlaKlientowEkskluzywnych = dostepnyDlaKlientowEkskluzywnych;
-	}
+    public void setDostepnyDlaKlientowEkskluzywnych(
+            boolean dostepnyDlaKlientowEkskluzywnych) {
+        this.dostepnyDlaKlientowEkskluzywnych = dostepnyDlaKlientowEkskluzywnych;
+    }
 
 
 }

@@ -12,10 +12,13 @@ public class VanCollectionsExample {
         CarCollectionService carCollectionService = new CarCollectionService();
         final HashMap<Integer, Car> carsCollection = carCollectionService.getCarsCollection();
 
+
         //zbudujmy kilka aut:
-        for (int i = 0; i < 5; i++) {
+        for (int i = 1; i <= 5; i++) {
             carCollectionService.add(new Car(i, "Auto_" + i));
         }
+
+
 
 
         System.out.println("Liczba elementow w fabryce: " + carsCollection.size());

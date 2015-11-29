@@ -13,7 +13,7 @@ public class CarTest {
         Vehicle vanCar1 = new VanCar(TypNadwozia.VAN, 3000, 40000, 0, 4, 10, 5, false);
         System.out.println(vanCar1.wyswietlPojazd());
         Vehicle vanCar2 = new VanCar(TypNadwozia.VAN, 3000, 40000, 0, 4, 10, 5, false);
-        System.out.println(vanCar1.wyswietlPojazd());
+        System.out.println(vanCar2.wyswietlPojazd());
     }
 }
 
