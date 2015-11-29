@@ -18,15 +18,27 @@ enum TypNadwozia {
 }
 
 public abstract class Vehicle {
-
     private static int nextId;
-    private int id = nextId++;
     private boolean dostepnoscNaStanie;
     private int pojemnoscSilnika;
     private int cena;
     private int pojemnoscBagaznika;
     private boolean dostepnyDlaKlientowEkskluzywnych;
     private TypNadwozia typNadwozia;
+    private int id = nextId++;
+
+    Vehicle(TypNadwozia typNadowzia, int pojemnoscSilnika, int cena, int pojemnoscBagaznika,
+            boolean dostepnyDlaKlientowEkskluzywnych) {
+
+
+        dostepnoscNaStanie = true;
+        this.typNadwozia = typNadowzia;
+        this.pojemnoscSilnika = pojemnoscSilnika;
+        this.cena = cena;
+        this.pojemnoscBagaznika = pojemnoscBagaznika;
+        this.dostepnyDlaKlientowEkskluzywnych = dostepnyDlaKlientowEkskluzywnych;
+
+    }
 
     public TypNadwozia getTypNadwozia() {
         return typNadwozia;
@@ -36,28 +48,15 @@ public abstract class Vehicle {
         this.typNadwozia = typNadwozia;
     }
 
-
-    Vehicle(TypNadwozia typNadowzia, int pojemnoscSilnika, int cena, int pojemnoscBagaznika,
-            boolean dostepnyDlaKlientowEkskluzywnych) {
-        this.dostepnoscNaStanie = true;
-        this.typNadwozia = typNadowzia;
-        this.pojemnoscSilnika = pojemnoscSilnika;
-        this.cena = cena;
-        this.pojemnoscBagaznika = pojemnoscBagaznika;
-        this.dostepnyDlaKlientowEkskluzywnych = dostepnyDlaKlientowEkskluzywnych;
-
-
-    }
-
     public void usunSprzedanyEgzemplarz(int id) {
         dostepnoscNaStanie = false;
     }
 
     public void wyswietlPojazd() {
-        if (isDostepnoscNaStanie()) {
+        if (dostepnoscNaStanie) {
             System.out.println("Id: " + getId() + ", dostepnosc na stanie: " + isDostepnoscNaStanie() + ", typ nadwozia: " + getTypNadwozia()
-                    + ", pojemnosc silnika: " + getPojemnoscSilnika() + "cmm, pojemnosc bagaznika: " + getPojemnoscBagaznika()
-                    + "L, cena: " + getCena() + "zł, dostepny dla klasy ekskluzywnej: " + isDostepnyDlaKlientowEkskluzywnych());
+                    + ", pojemnosc silnika: " + getPojemnoscSilnika() + ", pojemnosc bagaznika: " + getPojemnoscBagaznika()
+                    + ", cena: " + getCena() + ", dostepny dla klasy ekskluzywnej: " + isDostepnyDlaKlientowEkskluzywnych());
         } else System.out.println("nie ma takiego pojazdu");
     }
 
