@@ -1,14 +1,34 @@
 package pk.team.manufactory;
 
+import java.io.BufferedReader;
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.List;
 
 public class CarTest {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
 
 
-        Vehicle standardCar1 = new StandardCar(TypNadwozia.SEDAN, 512312312, 10000, 400, false);
+        BufferedReader in = new BufferedReader(
+                new InputStreamReader(new FileInputStream("C:\\samochody\\samochody.txt")));
+        String konkretneAuto = "";
+        System.out.println("Odczytuje plik:");
+
+        boolean correct = isCorrect(in.readLine());
+        System.out.println("plik poprawny? :"  + correct);
+
+//        do {
+//            konkretneAuto = in.readLine();
+//        } while (!isCorrect(konkretneAuto));
+
+
+        System.out.println("You typed " + konkretneAuto);
+
+
+        Vehicle standardCar1 = new StandardCar(TypNadwozia.SEDAN, Integer.parseInt(konkretneAuto), 10000, 400, false);
         standardCar1.wyswietlPojazd();
 
         Vehicle sportCar1 = new SportCar(TypNadwozia.SEDAN, 2500, 90000, 0, true, 300);
@@ -24,7 +44,6 @@ public class CarTest {
         vanCar2.wyswietlPojazd();
 
 
-
         List<Vehicle> autaOdWojtka = new ArrayList<>();
         autaOdWojtka.add(sportCar1);
         autaOdWojtka.add(standardCar1);
@@ -33,20 +52,32 @@ public class CarTest {
         autaOdWojtka.add(vanCar2);
 
 
-
-
         List<Vehicle> napewnoDobreAuta = new ArrayList<>();
-        for(Vehicle oneVehicle : autaOdWojtka){
-            if(oneVehicle.getPojemnoscSilnika() > 400 && oneVehicle.getPojemnoscSilnika() < 10000){
+        for (Vehicle oneVehicle : autaOdWojtka) {
+            if (oneVehicle.getPojemnoscSilnika() > 400 && oneVehicle.getPojemnoscSilnika() < 10000) {
                 napewnoDobreAuta.add(oneVehicle);
             }
         }
 
         System.out.println("------------------------------------");
-        napewnoDobreAuta.forEach(Vehicle::wyswietlPojazd) ;
+        napewnoDobreAuta.forEach(Vehicle::wyswietlPojazd);
 
 
+    }
 
+    private static boolean isCorrect(String line) {
+        // sprawdzam typ nadwozia, pojemnosc itd... jesli wsztysko ok to zwroc TRUE , wpp false
+        line = "123s";
+        int k;
+
+        try {
+            k = Integer.parseInt(line);
+        } catch (NumberFormatException e) {
+            System.out.println("Podano zla wartosc w pliku: " + line);
+            return false;
+        }
+
+        return true;
     }
 }
 
