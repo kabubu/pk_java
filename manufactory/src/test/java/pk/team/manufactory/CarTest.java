@@ -1,9 +1,8 @@
 package pk.team.manufactory;
 
 public class CarTest {
-    private VanCar vanCar1;
 
-    public static void main(String[] args) {
+     public static void main(String[] args) {
 
         Vehicle standardCar1 = new StandardCar(TypNadwozia.SEDAN, 1400, 10000, 400, false);
         standardCar1.wyswietlPojazd();
