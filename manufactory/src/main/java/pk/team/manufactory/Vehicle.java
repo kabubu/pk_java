@@ -65,8 +65,7 @@ public abstract class Vehicle {
             System.out.println("Id: " + getId() + ", dostepnosc na stanie: " + isDostepnoscNaStanie() + ", typ nadwozia: " + getTypNadwozia()
                     + ", pojemnosc silnika: " + getPojemnoscSilnika() + ", pojemnosc bagaznika: " + getPojemnoscBagaznika()
                     + ", cena: " + getCena() + ", dostepny dla klasy ekskluzywnej: " + isDostepnyDlaKlientowEkskluzywnych());
-        }
-        System.out.println("nie ma takiego pojazdu");
+        } else System.out.println("nie ma takiego pojazdu");
     }
 
     public String sprawdzDostepnosc() {

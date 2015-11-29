@@ -50,9 +50,7 @@ public class VanCar extends Vehicle {
                     + isDostepnyDlaKlientowEkskluzywnych()
                     + ", wymiary kontenera: " + szerokoscPaki + "x"
                     + wysokoscPaki + "x" + glebokoscPaki);
-        }
-
-        System.out.println("nie ma takiego pojazdu");
+        } else System.out.println("nie ma takiego pojazdu");
     }
 
 }

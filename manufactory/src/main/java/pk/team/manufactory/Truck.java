@@ -62,7 +62,6 @@ public class Truck extends Vehicle {
                     + ", wymiary kontenera: " + szerokoscKontenera + "x"
                     + wysokoscKontenera + "x" + glebokoscKontenera
                     + ", ladownosc kontenera: " + ladownoscKg);
-        }
-        System.out.println("nie ma takiego pojazdu");
+        } else System.out.println("nie ma takiego pojazdu");
     }
 }
