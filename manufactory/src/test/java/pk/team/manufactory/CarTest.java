@@ -2,7 +2,7 @@ package pk.team.manufactory;
 
 public class CarTest {
 
-     public static void main(String[] args) {
+     public static void main(String[] args) throws Exception {
 
         Vehicle standardCar1 = new StandardCar(TypNadwozia.SEDAN, 1400, 10000, 400, false);
         standardCar1.wyswietlPojazd();
@@ -19,6 +19,11 @@ public class CarTest {
         Vehicle vanCar2 = new VanCar(TypNadwozia.VAN, 3000, 40000, 0, 4, 10, 5, false);
         vanCar2.wyswietlPojazd();
 
+         Vehicle zlyPojazd = new StandardCar(TypNadwozia.SEDAN,40000,20,20,true);
+         zlyPojazd.wyswietlPojazd();
+         zlyPojazd.setCena(20);
+        zlyPojazd.wyswietlPojazd();
+         System.out.println(zlyPojazd.getCena());
 
 //
 //         List<Vehicle> vehicleList = new ArrayList<>();
