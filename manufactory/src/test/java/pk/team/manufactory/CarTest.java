@@ -39,15 +39,6 @@ public class CarTest {
 
     }
 
-
-    //File plik = new File("samochody.txt");
-
-//
-//        do {
-//            input = userInput.readLine();
-//        } while (isCorrectPath(input));
-
-
     private static boolean fileExist(String sciezka) {
         File plik = new File(sciezka);
         if (plik.exists()) {
@@ -57,29 +48,25 @@ public class CarTest {
         }
     }
 
+    private static boolean isCorrect(String line) {
+        // sprawdzam typ nadwozia, pojemnosc itd... jesli wsztysko ok to zwroc TRUE , wpp false
+        line = "123s";
+        int k;
 
-//        try {
-//            BufferedReader in = new BufferedReader(
-//                    new InputStreamReader(new FileInputStream());
-//
-//        } catch (FileNotFoundException e) {
-//            System.out.println("Plik nieznaleziony");
-//        }
-//
-//        String konkretneAuto = "";
-//        System.out.println("Odczytuje plik:");
-//
-//        boolean correct = isCorrect(in.readLine());
-//        System.out.println("plik poprawny? :" + correct);
+        try {
+            k = Integer.parseInt(line);
+        } catch (NumberFormatException e) {
+            System.out.println("Podano zla wartosc w pliku: " + line);
+            return false;
+        }
 
-//        do {
-//            konkretneAuto = in.readLine();
-//        } while (!isCorrect(konkretneAuto));
+        return true;
+    }
+}
 
-//
-//        System.out.println("You typed " + konkretneAuto);
-//
-//
+
+
+
 //        Vehicle standardCar1 = new StandardCar(TypNadwozia.SEDAN, Integer.parseInt(konkretneAuto), 10000, 400, false);
 //        standardCar1.wyswietlPojazd();
 //
@@ -118,26 +105,4 @@ public class CarTest {
 //        System.out.println("------------------------------------");
 //        napewnoDobreAuta.forEach(Vehicle::wyswietlPojazd);
 
-
-    private static boolean isCorrect(String line) {
-        // sprawdzam typ nadwozia, pojemnosc itd... jesli wsztysko ok to zwroc TRUE , wpp false
-        line = "123s";
-        int k;
-
-        try {
-            k = Integer.parseInt(line);
-        } catch (NumberFormatException e) {
-            System.out.println("Podano zla wartosc w pliku: " + line);
-            return false;
-        }
-
-        return true;
-    }
-
-    private static boolean isCorrectPath(String sciezka) {
-        return false;
-    }
-
-
-}
 
