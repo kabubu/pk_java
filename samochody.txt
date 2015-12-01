@@ -1,4 +1,4 @@
-StandardCar, TypNadwozia.SEDAN, Integer.parseInt(konkretneAuto), 10000, 400, false
+StandardCar, TypNadwozia.SEDAN, 2500, 10000, 20, false
 SportCar, TypNadwozia.SEDAN, 2500, 90000, 0, true, 300
 Truck, TypNadwozia.DOSTAWCZY, 30000000, 40000, 0, false, 10, 5, 4, 2000
 VanCar, TypNadwozia.VAN, 3000, 40000, 0, 4, 10, 5, false
