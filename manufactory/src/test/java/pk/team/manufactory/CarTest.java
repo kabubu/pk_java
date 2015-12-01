@@ -7,12 +7,11 @@ import java.util.List;
 public class CarTest {
 
     public static void main(String[] args) throws IOException {
-        BufferedReader userInput = new BufferedReader(
-                new InputStreamReader(System.in));
 
+        BufferedReader userInput = new BufferedReader(new InputStreamReader(System.in));
         String sciezka = "brak sciezki";
 
-
+// sprawdzanie czy plik istnieje
         if (args.length > 0) {
             if (fileExist(args[0])) {
                 sciezka = args[0];
@@ -35,8 +34,31 @@ public class CarTest {
             sciezka = "samochody.txt";
         }
 
-        System.out.println("sciezka to: " + sciezka);
+//czytanie pliku
+        List<String> inputFromFile = new ArrayList<>();
+        String lineOfFileWithVehicles;
+        File fileWithVehicles = new File(sciezka);
 
+        try {
+            FileReader fileReader = new FileReader(fileWithVehicles);
+
+            BufferedReader bufferedReader = new BufferedReader(fileReader);
+
+            while ((lineOfFileWithVehicles = bufferedReader.readLine()) != null) {
+                inputFromFile.add(lineOfFileWithVehicles);
+            }
+            bufferedReader.close();
+
+        } catch (IOException ex) {
+            System.out.println(
+                    "Error reading file '" + fileWithVehicles + "'");
+        }
+
+//wypisywanie zawartosci pliku, linia po lini
+        for (int i = 0; i < inputFromFile.size(); i++) {
+            System.out.println(inputFromFile.get(i));
+
+        }
     }
 
     private static boolean fileExist(String sciezka) {
@@ -63,8 +85,6 @@ public class CarTest {
         return true;
     }
 }
-
-
 
 
 //        Vehicle standardCar1 = new StandardCar(TypNadwozia.SEDAN, Integer.parseInt(konkretneAuto), 10000, 400, false);
