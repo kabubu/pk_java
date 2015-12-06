@@ -8,4 +8,5 @@ public class StandardCar extends Vehicle {
                 dostepnyDlaKlientowEkskluzywnych);
     }
 
+
 }

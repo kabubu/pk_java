@@ -56,20 +56,86 @@ public class CarTest {
                     "Error reading file '" + fileWithVehicles + "'");
         }
 
+
 //wypisywanie zawartosci pliku, linia po lini
 
-
+        List<Vehicle> listaZPojazdami = new ArrayList<>();
         for (String anInputFromFile : inputFromFile) {
-                      List<String> lineToObject = Arrays.asList(anInputFromFile.split("\\s*,\\s*"));
+            List<String> lineToObject = Arrays.asList(anInputFromFile.split("\\s*,\\s*"));
+            lineToObject.set(1, lineToObject.get(1).toUpperCase());
 
-            for (String aLineToObject : lineToObject) {
-                System.out.print(aLineToObject + ".......");
+            if (enumTypeExist(lineToObject.get(1))) {
+                switch (lineToObject.get(0)) {
+                    case "StandardCar":
+                        listaZPojazdami.add(new StandardCar(TypNadwozia.valueOf(lineToObject.get(1)), Integer.parseInt(lineToObject.get(2)), Integer.parseInt(lineToObject.get(3)),
+                                Integer.parseInt(lineToObject.get(4)), Boolean.parseBoolean(lineToObject.get(5))));
+                        break;
+                    case "SportCar":
+                        listaZPojazdami.add(new SportCar(TypNadwozia.valueOf(lineToObject.get(1)), Integer.parseInt(lineToObject.get(2)), Integer.parseInt(lineToObject.get(3)),
+                                Integer.parseInt(lineToObject.get(4)), Boolean.parseBoolean(lineToObject.get(5)), Integer.parseInt(lineToObject.get(6))));
+                        break;
+                    case "Truck":
+                        listaZPojazdami.add(new Truck(TypNadwozia.valueOf(lineToObject.get(1)), Integer.parseInt(lineToObject.get(2)), Integer.parseInt(lineToObject.get(3)),
+                                Integer.parseInt(lineToObject.get(4)), Boolean.parseBoolean(lineToObject.get(5)), Integer.parseInt(lineToObject.get(6)), Integer.parseInt(lineToObject.get(7)),
+                                Integer.parseInt(lineToObject.get(8)), Integer.parseInt(lineToObject.get(9))));
+                        break;
+                    case "VanCar":
+                        listaZPojazdami.add(new VanCar(TypNadwozia.valueOf(lineToObject.get(1)), Integer.parseInt(lineToObject.get(2)), Integer.parseInt(lineToObject.get(3)),
+                                Integer.parseInt(lineToObject.get(4)), Integer.parseInt(lineToObject.get(5)), Integer.parseInt(lineToObject.get(6)), Integer.parseInt(lineToObject.get(7)),
+                                Boolean.parseBoolean(lineToObject.get(8))));
+                        break;
 
+                }
             }
-            System.out.println("size: " + lineToObject.size());
+        }
+        //listaZPojazdami.forEach(Vehicle::wyswietlPojazd);
+
+        try {
+            FileOutputStream fileOut =
+                    new FileOutputStream("samochodyOutput.ser");
+            ObjectOutputStream out = new ObjectOutputStream(fileOut);
+            out.writeObject(listaZPojazdami.get(0));
+            out.close();
+            fileOut.close();
+        } catch (IOException i) {
+            i.printStackTrace();
         }
 
+
+
+
+
+        Vehicle e;
+
+        try {
+            FileInputStream fileIn = new FileInputStream("samochodyOutput.ser");
+            ObjectInputStream in = new ObjectInputStream(fileIn);
+            e = (Vehicle) in.readObject();
+            in.close();
+            fileIn.close();
+        } catch (IOException i) {
+            i.printStackTrace();
+            return;
+        } catch (ClassNotFoundException c) {
+            System.out.println("Employee class not found");
+            c.printStackTrace();
+            return;
+        }
+        System.out.println("Nasze wyniki:");
+        e.wyswietlPojazd();
     }
+
+
+    private static boolean enumTypeExist(String enumGot) {
+        for (TypNadwozia typDoSprawdzenia : TypNadwozia.values()) {
+            if (enumGot.equals(typDoSprawdzenia.toString())) {
+                return true;
+            }
+
+        }
+        return false;
+    }
+
 
     private static boolean fileExist(String sciezka) {
         File plik = new File(sciezka);

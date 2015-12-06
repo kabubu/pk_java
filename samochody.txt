@@ -1,5 +1,27 @@
-StandardCar, TypNadwozia.SEDAN, 2500, 10000, 20, false
-SportCar, TypNadwozia.SEDAN, 2500, 90000, 0, true, 300
-Truck, TypNadwozia.DOSTAWCZY, 30000000, 40000, 0, false, 10, 5, 4, 2000
-VanCar, TypNadwozia.VAN, 3000, 40000, 0, 4, 10, 5, false
-VanCar, TypNadwozia.VAN, 444, 40000, 0, 4, 10, 5, false
+StandardCar, SEDan, 2500, 14000, 40, true
+StandardCar, SEDAN, 2400, 12000, 30, false
+StandardCar, SEDAN, 2800, 11000, 20, false
+SportCar, SEDAN, 2500, 90000, 0, true, 300
+VanCar, VAN, 444, 41500, 0, 4, 10, 5, false
+VanCar, VAN, 424, 42000, 0, 4, 10, 5, false
+SportCar, SEDAN, 2500, 90000, 0, true, 310
+SportCar, SEDAN, 2500, 90000, 0, true, 320
+StandardCar, SEDAN, 2900, 11000, 20, false
+StandardCar, SEDAN, 3000, 11000, 20, false
+StandardCar, SEDAN, 3100, 11000, 20, false
+SportCar, SEDAN, 2500, 90000, 0, true, 330
+Truck, DOSTAWCZY, 30000000, 40000, 2000, false, 10, 5, 4, 2000
+Truck, DOSTAWCZY, 30000000, 40000, 2000, false, 10, 5, 4, 2000
+Truck, DOSTAWCZY, 25000000, 40000, 2000, false, 10, 5, 4, 2000
+Truck, DOSTAWCZY, 30000000, 40000, 2400, false, 10, 5, 4, 2000
+StandardCar, SEDAN, 2600, 11000, 20, false
+StandardCar, SEDAN, 2700, 11000, 20, false
+Truck, DOSTAWCZY, 30000000, 40000, 2400, false, 10, 5, 4, 2000
+VanCar, VAN, 3000, 40000, 0, 4, 10, 5, false
+SportCar, SEDAN, 2500, 90000, 0, true, 400
+SportCar, SEDAN, 2500, 90000, 0, true, 350
+VanCar, VAN, 444, 44000, 0, 4, 10, 5, false
+Truck, DOSTAWCZY, 30000000, 40000, 2400, false, 10, 5, 4, 2000
+Truck, DOSTAWCZY, 30000000, 40000, 2400, false, 10, 5, 4, 2000
+VanCar, VAN, 434, 40000, 0, 4, 10, 5, false
+VanCar, VAN, 444, 41000, 0, 4, 10, 5, false

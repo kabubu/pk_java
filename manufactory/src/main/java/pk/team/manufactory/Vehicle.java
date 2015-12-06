@@ -17,7 +17,7 @@ enum TypNadwozia {
     HATCHBACK, SEDAN, KOMBI, VAN, DOSTAWCZY
 }
 
-public abstract class Vehicle {
+public abstract class Vehicle implements java.io.Serializable {
     private static int nextId;
     private boolean dostepnoscNaStanie;
     private int pojemnoscSilnika;
